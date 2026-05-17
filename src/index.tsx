@@ -1,7 +1,19 @@
 // @ts-nocheck
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import { createRoot } from 'react-dom/client';
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';   // ← comment kiya
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(<App />);
+import './index.scss';
+import App from './app';
+import { Provider } from './context';
+
+createRoot(document.getElementById("root") as HTMLElement).render(
+	// <BrowserRouter>   // ← temporarily comment kiya
+		<Provider>
+			<App />
+			{/* <ToastContainer position="top-center" theme="dark" /> */}
+		</Provider>
+	// </BrowserRouter>
+);
